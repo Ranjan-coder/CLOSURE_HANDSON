@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>1. "    function counter(){
+        var counter = 0;
+    
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+    
+        return IncreaseCounter;
+    }
+    
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());"</div>
+    <div>ANS : </div>
+    <div>1,2,3,4</div>
+    <div>2. "let count = 0;
+        (function () {
+          if (count === 0) {
+            let count = 1;
+            console.log(count); // What is logged?
+          }
+          console.log(count); // What is logged?
+        })();"</div>
+        <div>ANS : </div>
+        <div>1,0</div>
+      <div>3. for (var i = 0; i < 3; i++) {
+        setTimeout(function log() {
+          console.log(i); // What is logged?
+        }, 1000);
+      }</div>
+      <div>ANS : </div>
+      <div>3 will be print 3 times after 1 sec</div>
+      <div>4. Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</div>
+      <div>ANS : </div>
+      <div></div>
+      <div>5. Take a variable in outer function and create an inner function to increase the counter every time it is called</div>
+      <div>ANS : </div>
+      <div></div>
+      <div>6."Print Output
+
+        var a = 12;
+        (function () {
+          alert(a);
+        })();"</div>
+        <div>ANS : </div>
+        <div>The out put will be 12, if we run this code in vs code then it will not run because alert is not define but it will execute in browser</div>
+        <div>7. "var a = 10;
+          var x = (function () {
+            var a = 12;
+            return function () {
+              alert(a);
+            };
+          })();
+          x();"</div>
+          <div>ANS : </div>
+          <div>The ans will be 12, because first we initialize 10 to global variable a , then in function we initialize 12 to a .Its change 10 to 12</div>
+          <div>8. "var globalVar = ""xyz"";
+
+            (function outerFunc(outerArg) {
+                var outerVar = 'a';
+                
+                (function innerFunc(innerArg) {
+                var innerVar = 'b';
+                
+                console.log(
+                    ""outerArg = "" + outerArg + ""\n"" +
+                    ""innerArg = "" + innerArg + ""\n"" +
+                    ""outerVar = "" + outerVar + ""\n"" +
+                    ""innerVar = "" + innerVar + ""\n"" +
+                    ""globalVar = "" + globalVar);
+                
+                })(456);
+            })(123);"</div>
+            <div>ANS : </div>
+            <div>outerArg = 123,innerArg = 456,outerVar = a,innerVar = b,globalVar = xyz</div>
+  <script src="./script.js"></script>
+</body>
+</html>
