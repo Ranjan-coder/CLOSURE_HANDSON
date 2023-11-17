@@ -24,6 +24,10 @@
     alert(counter());"</div>
     <div>ANS : </div>
     <div>1,2,3,4</div>
+    <div>Explanation : in first alert the counter value is 1, in second 2 like it will increase , because in first 
+      counter function we are returning increaseCounter function . So the no of time we call the counter function 
+      it will increase.
+    </div>
     <div>2. "let count = 0;
         (function () {
           if (count === 0) {
@@ -34,6 +38,9 @@
         })();"</div>
         <div>ANS : </div>
         <div>1,0</div>
+        <div>Explanation : in if block we declared count value as 1 so in first console value it will access
+          the if block count value, in second count it will sccess the global count value.
+        </div> 
       <div>3. for (var i = 0; i < 3; i++) {
         setTimeout(function log() {
           console.log(i); // What is logged?
@@ -41,12 +48,58 @@
       }</div>
       <div>ANS : </div>
       <div>3 will be print 3 times after 1 sec</div>
+      <div>Explanation : result will be 3 because var perform the hoisting , setTimeout is a asynchronous function
+                  1. it doesn't create a new scope for each itteration
+                  2. i variable hoisted to the top of the function scope
+                  3. when setTimeout method execute it refers to same i in the same scope by the time call back are executed
+                  4. the loop has already finished
+        </div>
       <div>4. Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</div>
+      
       <div>ANS : </div>
+      <div>function calculateRectangleArea(length) {
+         <!-- Inner function to calculate area -->
+        function innerFunction(breadth) {
+            return length * breadth;
+        }
+    
+         <!-- Returning the inner function -->
+        return innerFunction;
+    }
+    
+     <!-- Example of using the outer function to get the inner function -->
+    const areaCalculator = calculateRectangleArea(5);
+    
+     <!-- Using the inner function to calculate the area with a specific breadth -->
+    const area = areaCalculator(8);
+    
+    console.log("Area of the rectangle:", area);
+    </div>
       <div></div>
       <div>5. Take a variable in outer function and create an inner function to increase the counter every time it is called</div>
       <div>ANS : </div>
-      <div></div>
+      <div>function counterFunction() {
+         <!-- Counter variable in the outer function -->
+        let counter = 0;
+    
+         <!-- Inner function to increase the counter -->
+        function incrementCounter() {
+            counter++;
+            console.log("Counter:", counter);
+        }
+    
+         <!-- Returning the inner function -->
+        return incrementCounter;
+    }
+    
+     <!-- Example of using the outer function to get the inner function -->
+    const increment = counterFunction();
+    
+     <!-- Using the inner function to increment the counter -->
+    increment(); <!--  Counter: 1 -->
+    increment(); <!--  Counter: 2 -->
+    increment(); <!--  Counter: 3 -->
+    </div>
       <div>6."Print Output
 
         var a = 12;
@@ -55,6 +108,9 @@
         })();"</div>
         <div>ANS : </div>
         <div>The out put will be 12, if we run this code in vs code then it will not run because alert is not define but it will execute in browser</div>
+        <div>Explanation : inside the function there is not inner a declared, so it will access the global variable
+          it will perform the closure function
+        </div>
         <div>7. "var a = 10;
           var x = (function () {
             var a = 12;
@@ -64,7 +120,9 @@
           })();
           x();"</div>
           <div>ANS : </div>
-          <div>The ans will be 12, because first we initialize 10 to global variable a , then in function we initialize 12 to a .Its change 10 to 12</div>
+          <div>The ans will be 12, because in his own scope a is not declared , so it will search the nearest scope
+            , there a is declared as 12. it will give alert a 12
+          </div>
           <div>8. "var globalVar = ""xyz"";
 
             (function outerFunc(outerArg) {
@@ -84,6 +142,10 @@
             })(123);"</div>
             <div>ANS : </div>
             <div>outerArg = 123,innerArg = 456,outerVar = a,innerVar = b,globalVar = xyz</div>
+            <div>Explanation : outerArg access the 123 argument,innerArg access 456 argument,outerVar has a ,innerVar has b,
+               and in globally globalVar initialize as xyz
+
+            </div>
   <script src="./script.js"></script>
 </body>
 </html>
